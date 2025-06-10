@@ -71,8 +71,8 @@ recommend_food("cashew nut cookies", top_n=5)
 
 ## Evaluation
 Pada sistem rekomendasi makanan dengan pendekatan content-based filtering ini menggunakan metrik evaluasi Precision@k untuk metrik pembuktian rekomendasi top-N.
-Precision@5 untuk: Cashew Nut Cookies (Dessert)
-Precision@5: 1.00
+- Precision@5 untuk: Cashew Nut Cookies (Dessert)
+- Precision@5: 1.00
 Rekomendasi:
 | Index | Name                         | C_Type  | Veg_Non |
 |-------|------------------------------|---------|---------|
