@@ -1,69 +1,72 @@
-# Laporan Proyek Machine Learning - Nama Anda
+# Laporan Proyek Machine Learning - Sistem Rekomendasi Makanan pendekatan Content-Based Filtering - Dimas Meidiansyah Putra
 
 ## Project Overview
+    Pemilihan makanan menjadi aspek penting dalam kebutuhan makanan maupun bidang industri kuliner. Pengguna sering kali kesulitan menemukan makanan yang sesuai preferensi, baik dari sisi tipe makanan, kandungan vegan/non-vegan, maupun deskripsi hidangan. oleh karena itu, diadakannya sistem rekomendasi membantu pengguna mendapatkan saran makanan berdasarkan preferensi yang diinginkan atau variasi makanan lainnya yang sejenis dengan makanan yang diinginkan. 
+    Dengan demikian, dikembangkan proyek sistem rekomendasi makanan berbasis pendekatan content-based filtering ini penting untuk diselesaikan dalam menghasilkan atau merekomendasikan makanan yang mirip berdasarkan jenis, preferensi vegan/non-vegan, dan deskripsi makanan. Dataset yang digunakan berisi informasi mengenai berbagai makanan, termasuk nama, tipe, deskripsi, dan label vegan/non-vegan.
+    
+sumber referensi: [Sistem Rekomendasi Wisata Kuliner Madura Menggunakan Content Based Filtering](https://jurnal.yudharta.ac.id/v2/index.php/EXPLORE-IT/article/view/5366)
 
-Pada bagian ini, Kamu perlu menuliskan latar belakang yang relevan dengan proyek yang diangkat.
-
-**Rubrik/Kriteria Tambahan (Opsional)**:
-- Jelaskan mengapa dan bagaimana masalah tersebut harus diselesaikan
-- Menyertakan hasil riset terkait atau referensi. Referensi yang diberikan harus berasal dari sumber yang kredibel dan author yang jelas.
-- Format Referensi dapat mengacu pada penulisan sitasi [IEEE](https://journals.ieeeauthorcenter.ieee.org/wp-content/uploads/sites/7/IEEE_Reference_Guide.pdf), [APA](https://www.mendeley.com/guides/apa-citation-guide/) atau secara umum seperti [di sini](https://penerbitdeepublish.com/menulis-buku-membuat-sitasi-dengan-mudah/)
-- Sumber yang bisa digunakan [Scholar](https://scholar.google.com/)
-
-## Business Understanding
-
-Pada bagian ini, Anda perlu menjelaskan proses klarifikasi masalah.
-
-Bagian laporan ini mencakup:
-
+## Business Understanding    
 ### Problem Statements
-
-Menjelaskan pernyataan masalah:
-- Pernyataan Masalah 1
-- Pernyataan Masalah 2
-- Pernyataan Masalah n
-
+- Pengguna sering kesulitan menemukan makanan yang sesuai dengan preferensi mereka karena banyaknya pilihan makanan yang tersedia tanpa sistem penyaringan yang efektif.
+- Tidak adanya sistem rekomendasi yang memanfaatkan informasi konten makanan (seperti jenis makanan, status vegan/non-vegan, dan deskripsi) untuk memberikan saran makanan yang relevan.
 ### Goals
-
-Menjelaskan tujuan proyek yang menjawab pernyataan masalah:
-- Jawaban pernyataan masalah 1
-- Jawaban pernyataan masalah 2
-- Jawaban pernyataan masalah n
-
-Semua poin di atas harus diuraikan dengan jelas. Anda bebas menuliskan berapa pernyataan masalah dan juga goals yang diinginkan.
-
-**Rubrik/Kriteria Tambahan (Opsional)**:
-- Menambahkan bagian “Solution Approach” yang menguraikan cara untuk meraih goals. Bagian ini dibuat dengan ketentuan sebagai berikut: 
-
-    ### Solution statements
-    - Mengajukan 2 atau lebih solution approach (algoritma atau pendekatan sistem rekomendasi).
+- Membangun sistem rekomendasi makanan berbasis content-based filtering yang mampu menyarankan makanan serupa dari inputan makanan dari pengguna yang dicocokkan berdasarkan deskripsi dan atribut makanan.
+- Meningkatkan pengalaman pengguna dalam menjelajahi makanan dengan memberikan top-N rekomendasi yang relevan dan personal.
 
 ## Data Understanding
-Paragraf awal bagian ini menjelaskan informasi mengenai jumlah data, kondisi data, dan informasi mengenai data yang digunakan. Sertakan juga sumber atau tautan untuk mengunduh dataset. Contoh: [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/Restaurant+%26+consumer+data).
+Dataset yang dipilih adalah dataset sistem rekomendasi makanan yang dalam dataset menampilkan nama makanan dan detail dari makanan tersebut:
+Sumber dataset: [Food Recommendation System](https://www.kaggle.com/datasets/schemersays/food-recommendation-system)
+Jumlah Baris Data: 400 baris data
+Jumlah Kolom Data: 5 kolom Data
+Kondisi Data:
+- Missing Value: Tidak ditemukan nilai kosong pada dataset (hasil dari kode `data.isnull().sum()` manghasilkan nol untuk semua fitur pada dataset).
+- Data Duplikat: Tidak terdapat duplikat dalam dataset (hasil dari kode `data.duplicated().sum()` = 0).
+  
+Variabel-variabel pada Dataset sistem rekomendasi makanan adalah sebagai berikut:
+- Food_ID: merukapan nomor Unique ID dari tiap makanan.
+- Name: merupakan nama-nama makanan dari dataset tersebut.
+- C_Type: merupakan kategori dari makanan tersebut.
+- Veg_Non: merupakan tipe makanan tersebut antara tergolong vegetarian atau non vegetarian.
+- Describe: merupakan bahan bahan-bahan atau isian dari makanan tersebut.
 
-Selanjutnya, uraikanlah seluruh variabel atau fitur pada data. Sebagai contoh:  
-
-Variabel-variabel pada Restaurant UCI dataset adalah sebagai berikut:
-- accepts : merupakan jenis pembayaran yang diterima pada restoran tertentu.
-- cuisine : merupakan jenis masakan yang disajikan pada restoran.
-- dst
-
-**Rubrik/Kriteria Tambahan (Opsional)**:
-- Melakukan beberapa tahapan yang diperlukan untuk memahami data, contohnya teknik visualisasi data beserta insight atau exploratory data analysis.
+**teknik visualisasi data dalam menganalisis dataset**
+- Identifikasi distribusi variabel kategori tipe makanan disajikan dalam bar plot
+![distribusi tipe makanan)](https://github.com/user-attachments/assets/4fc70d03-7a09-440d-b4cf-a2d834840254)
+- Identifikasi distribusi variabel tipe makanan vegan/non vegan disajikan dalam bar plot
+![distribusi tipe makanan vegan/non egan](https://github.com/user-attachments/assets/866d36b2-eaab-4d08-bb31-d2cb025f4f35)
 
 ## Data Preparation
-Pada bagian ini Anda menerapkan dan menyebutkan teknik data preparation yang dilakukan. Teknik yang digunakan pada notebook dan laporan harus berurutan.
+1. pemilihan variabel fitur yang akan digunakan sebagai pertimbangan hasil rekomendasi:
+   - kolom variabel C_Type
+   - kolom variabel Veg_Non
+   - kolom variabel Describe
+2. Penggabungan variabel fitur yang dipilih
+   - penggabungan dilakukan agar mempermudah sebelum melakukan teknik vektorisasi TF-IDF vectorizer dan sebelum melakukan rekomendasi
+3. Melakukan teknik vektorisasi menggunakan TF-IDF vectorizer:
+   - tujuan melakukan teknik ini `TfidfVectorizer()` untuk mengubah penggabungan variabel tersebut dari kata menjadi bentuk vektor numerik
+   - menggunakan stop_words='english' karenakan dataset menggunakan bahasa Inggris.
 
-**Rubrik/Kriteria Tambahan (Opsional)**: 
-- Menjelaskan proses data preparation yang dilakukan
-- Menjelaskan alasan mengapa diperlukan tahapan data preparation tersebut.
 
 ## Modeling
-Tahapan ini membahas mengenai model sisten rekomendasi yang Anda buat untuk menyelesaikan permasalahan. Sajikan top-N recommendation sebagai output.
+cara kerja sistem rekomendasi ini dengan menggunakan pendekatan content-based Filtering menghitung hasil kesamaan tiap makanan menggunakan teknik cosine similarity dari hasil penggabungan fitur yang di proses vektorisasi menggunakan TF-IDF. dan menghasilkan rekomendasi makanan teratas berdasarkan hasil kemiripan tertinggi
+- kelebihan:
+  - Hanya membutuhkan informasi dari makanan tersebut untuk menghasilkan rekomendasi makanan lainnya
+  - dapat menghasilkan rekomendasi makanan lainnya dengan memasukkan nama makanan yang diinginkan
+- kekurangan:
+  - terbatas dengan data yang ada
+  - tidak dapat mempertimbangkan rekomendasi makanan dari pengguna lainnya.
 
-**Rubrik/Kriteria Tambahan (Opsional)**: 
-- Menyajikan dua solusi rekomendasi dengan algoritma yang berbeda.
-- Menjelaskan kelebihan dan kekurangan dari solusi/pendekatan yang dipilih.
+Berikut Top_n=5 sebagai output untuk sistem rekomendasi makanan
+recommend_food("cashew nut cookies", top_n=5)
+| Name	                                                   | C_Type                        | Veg_Non         |
+| -------------------------------------------------------- | ----------------------------- | --------------- |
+| banana and chia tea cake                                 | Dessert                       | veg             |
+| microwave chocolate cake                                 | Dessert                       | veg             |
+| lemon poppy seed cake                                    | Dessert                       | veg             |
+| ragi oats ladoo (laddu)                                  | Dessert                       | veg             |
+| lemon poppy seed cake                                    | Dessert                       | veg             |
+
 
 ## Evaluation
 Pada bagian ini Anda perlu menyebutkan metrik evaluasi yang digunakan. Kemudian, jelaskan hasil proyek berdasarkan metrik evaluasi tersebut.
