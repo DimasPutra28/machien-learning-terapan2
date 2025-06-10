@@ -13,6 +13,8 @@ sumber referensi: [Sistem Rekomendasi Wisata Kuliner Madura Menggunakan Content 
 ### Goals
 - Membangun sistem rekomendasi makanan berbasis content-based filtering yang mampu menyarankan makanan serupa dari inputan makanan dari pengguna yang dicocokkan berdasarkan deskripsi dan atribut makanan.
 - Meningkatkan pengalaman pengguna dalam menjelajahi makanan dengan memberikan top-N rekomendasi yang relevan dan personal.
+### Solution
+- menciptakan sistem rekomendasi makanan dengan memanfaatkan data dan atribut makanan yang tersedia dengan melakukan input makanan dari pengguna dan menghasilkan rekomendasi makanan lainnya yang serupa dari makanan yang diinputkan
 
 ## Data Understanding
 Dataset yang dipilih adalah dataset sistem rekomendasi makanan yang dalam dataset menampilkan nama makanan dan detail dari makanan tersebut:
@@ -47,7 +49,6 @@ Variabel-variabel pada Dataset sistem rekomendasi makanan adalah sebagai berikut
    - tujuan melakukan teknik ini `TfidfVectorizer()` untuk mengubah penggabungan variabel tersebut dari kata menjadi bentuk vektor numerik
    - menggunakan stop_words='english' karenakan dataset menggunakan bahasa Inggris.
 
-
 ## Modeling
 cara kerja sistem rekomendasi ini dengan menggunakan pendekatan content-based Filtering menghitung hasil kesamaan tiap makanan menggunakan teknik cosine similarity dari hasil penggabungan fitur yang di proses vektorisasi menggunakan TF-IDF. dan menghasilkan rekomendasi makanan teratas berdasarkan hasil kemiripan tertinggi
 - kelebihan:
@@ -69,15 +70,17 @@ recommend_food("cashew nut cookies", top_n=5)
 
 
 ## Evaluation
-Pada bagian ini Anda perlu menyebutkan metrik evaluasi yang digunakan. Kemudian, jelaskan hasil proyek berdasarkan metrik evaluasi tersebut.
+Pada sistem rekomendasi makanan dengan pendekatan content-based filtering ini menggunakan metrik evaluasi Precision@k untuk metrik pembuktian rekomendasi top-N.
+Precision@5 untuk: Cashew Nut Cookies (Dessert)
+Precision@5: 1.00
+Rekomendasi:
+                         Name   C_Type Veg_Non
+202  banana and chia tea cake  Dessert     veg
+276  microwave chocolate cake  Dessert     veg
+198     lemon poppy seed cake  Dessert     veg
+256   ragi oats ladoo (laddu)  Dessert     veg
+250    lemon poppy seed cake   Dessert     veg
 
-Ingatlah, metrik evaluasi yang digunakan harus sesuai dengan konteks data, problem statement, dan solusi yang diinginkan.
-
-**Rubrik/Kriteria Tambahan (Opsional)**: 
-- Menjelaskan formula metrik dan bagaimana metrik tersebut bekerja.
-
-**---Ini adalah bagian akhir laporan---**
-
-_Catatan:_
-- _Anda dapat menambahkan gambar, kode, atau tabel ke dalam laporan jika diperlukan. Temukan caranya pada contoh dokumen markdown di situs editor [Dillinger](https://dillinger.io/), [Github Guides: Mastering markdown](https://guides.github.com/features/mastering-markdown/), atau sumber lain di internet. Semangat!_
-- Jika terdapat penjelasan yang harus menyertakan code snippet, tuliskan dengan sewajarnya. Tidak perlu menuliskan keseluruhan kode project, cukup bagian yang ingin dijelaskan saja.
+- dari hasil evaluasi menggunakan precision@k pada hasil rekomendasi top_n sistem rekomendasi makanan dapat mengatasi kesulitan bagi pengguna dalam menemukan makanan, karena pengguna hanya masukkan makanan yang diinginkan dan menghasilkan rekomendasi makanan lainnya yang serupa. hasil dilihat dengan berdasarkan hasil evaluasi precision@k = 1.00
+- dari hasil evaluasi rekomendasi makanan membuktikan rekomendasi makanan berdasarkan kemiripan dari informasi data tiap makanan
+- dari solusi yang ada telah diciptakannya sistem rekomendasi makanan dengan memanfaatkan data informasi makanan untuk menghasilkan rekomendasi dan pengguna hanya menginputkan nama makanan yang diinginkan saja, dapat membantu keinginan pengguna.
