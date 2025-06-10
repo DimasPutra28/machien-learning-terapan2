@@ -1,8 +1,8 @@
 # Laporan Proyek Machine Learning - Sistem Rekomendasi Makanan pendekatan Content-Based Filtering - Dimas Meidiansyah Putra
 
 ## Project Overview
-    Pemilihan makanan menjadi aspek penting dalam kebutuhan makanan maupun bidang industri kuliner. Pengguna sering kali kesulitan menemukan makanan yang sesuai preferensi, baik dari sisi tipe makanan, kandungan vegan/non-vegan, maupun deskripsi hidangan. oleh karena itu, diadakannya sistem rekomendasi membantu pengguna mendapatkan saran makanan berdasarkan preferensi yang diinginkan atau variasi makanan lainnya yang sejenis dengan makanan yang diinginkan. 
-    Dengan demikian, dikembangkan proyek sistem rekomendasi makanan berbasis pendekatan content-based filtering ini penting untuk diselesaikan dalam menghasilkan atau merekomendasikan makanan yang mirip berdasarkan jenis, preferensi vegan/non-vegan, dan deskripsi makanan. Dataset yang digunakan berisi informasi mengenai berbagai makanan, termasuk nama, tipe, deskripsi, dan label vegan/non-vegan.
+Pemilihan makanan menjadi aspek penting dalam kebutuhan makanan maupun bidang industri kuliner. Pengguna sering kali kesulitan menemukan makanan yang sesuai preferensi, baik dari sisi tipe makanan, kandungan vegan/non-vegan, maupun deskripsi hidangan. oleh karena itu, diadakannya sistem rekomendasi membantu pengguna mendapatkan saran makanan berdasarkan preferensi yang diinginkan atau variasi makanan lainnya yang sejenis dengan makanan yang diinginkan. 
+Dengan demikian, dikembangkan proyek sistem rekomendasi makanan berbasis pendekatan content-based filtering ini penting untuk diselesaikan dalam menghasilkan atau merekomendasikan makanan yang mirip berdasarkan jenis, preferensi vegan/non-vegan, dan deskripsi makanan. Dataset yang digunakan berisi informasi mengenai berbagai makanan, termasuk nama, tipe, deskripsi, dan label vegan/non-vegan.
     
 sumber referensi: [Sistem Rekomendasi Wisata Kuliner Madura Menggunakan Content Based Filtering](https://jurnal.yudharta.ac.id/v2/index.php/EXPLORE-IT/article/view/5366)
 
