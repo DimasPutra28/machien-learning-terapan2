@@ -74,12 +74,13 @@ Pada sistem rekomendasi makanan dengan pendekatan content-based filtering ini me
 Precision@5 untuk: Cashew Nut Cookies (Dessert)
 Precision@5: 1.00
 Rekomendasi:
-                         Name   C_Type Veg_Non
-202  banana and chia tea cake  Dessert     veg
-276  microwave chocolate cake  Dessert     veg
-198     lemon poppy seed cake  Dessert     veg
-256   ragi oats ladoo (laddu)  Dessert     veg
-250    lemon poppy seed cake   Dessert     veg
+| Index | Name                         | C_Type  | Veg_Non |
+|-------|------------------------------|---------|---------|
+| 202   | banana and chia tea cake     | Dessert | veg     |
+| 276   | microwave chocolate cake     | Dessert | veg     |
+| 198   | lemon poppy seed cake        | Dessert | veg     |
+| 256   | ragi oats ladoo (laddu)      | Dessert | veg     |
+| 250   | lemon poppy seed cake        | Dessert | veg     |
 
 - dari hasil evaluasi menggunakan precision@k pada hasil rekomendasi top_n sistem rekomendasi makanan dapat mengatasi kesulitan bagi pengguna dalam menemukan makanan, karena pengguna hanya masukkan makanan yang diinginkan dan menghasilkan rekomendasi makanan lainnya yang serupa. hasil dilihat dengan berdasarkan hasil evaluasi precision@k = 1.00
 - dari hasil evaluasi rekomendasi makanan membuktikan rekomendasi makanan berdasarkan kemiripan dari informasi data tiap makanan
