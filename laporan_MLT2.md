@@ -45,6 +45,8 @@ Variabel-variabel pada Dataset sistem rekomendasi makanan adalah sebagai berikut
    - kolom variabel Describe
 2. Penggabungan variabel fitur yang dipilih
    - penggabungan dilakukan agar mempermudah sebelum melakukan teknik vektorisasi TF-IDF vectorizer dan sebelum melakukan rekomendasi
+   - menggunakan fitur .fillna('') pada fitur penggabungan penting dengan tujuan agar teks yang digabung tidak diganggu dengan missing          value dan teks string lebih konsisten saat melakukan gabungan yang mengakibatkan error pada saat vektorisasi.
+   - hasil penggabungan disimpan dalam variabel foods['content'] dan menggunakan fitur .str.lower() dengan tujuan menstrandardkan teks          agar teks menjadi huruf kecil semua atau menghindari kapitalisasi dan menyamakan semua representasi kata.
 3. Melakukan teknik vektorisasi menggunakan TF-IDF vectorizer:
    - tujuan melakukan teknik ini `TfidfVectorizer()` untuk mengubah penggabungan variabel tersebut dari kata menjadi bentuk vektor numerik
    - menggunakan stop_words='english' karenakan dataset menggunakan bahasa Inggris.
